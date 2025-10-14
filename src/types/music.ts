@@ -1,5 +1,3 @@
-export type TrackSource = 'youtube' | 'youtube-music' | 'file';
-
 export interface Track {
   id: string;
   title: string;
@@ -12,7 +10,7 @@ export interface Track {
   localPath?: string;
   addedAt: number;
   isLoading?: boolean;
-  source?: TrackSource;
+  source?: string;
 }
 
 export interface Playlist {

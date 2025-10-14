@@ -174,7 +174,6 @@ class YoutubeService {
 
       return (videos).filter(video => !!video).slice(0, size).filter(video => !!video.basic_info && !!video.basic_info.id).map(video => {
         const info = video.basic_info!;
-        console.log('[YouTubeService] getInfo for source:', video);
         return {
           title: info.title || '',
           artist: info.author || '',
@@ -183,7 +182,7 @@ class YoutubeService {
           id: info.id!,
           videoId: info.id!,
           addedAt: Date.now(),
-          source: 'youtube',
+          source: 'minip-ytb',
         }
       });
     } catch (error) {
