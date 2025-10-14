@@ -1,6 +1,5 @@
 import {MusicSource} from "./types/source";
 import {youtubeService} from "./youtube.service";
-import packageJson from '../package.json';
 
 class YouTubeSource implements MusicSource {
   id: string = 'minip-ytb';

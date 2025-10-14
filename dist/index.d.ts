@@ -2,7 +2,6 @@ import * as node_modules_youtubei_js_dist_src_parser_ytmusic from 'node_modules/
 import * as node_modules_youtubei_js_dist_src_parser_helpers from 'node_modules/youtubei.js/dist/src/parser/helpers';
 import * as node_modules_youtubei_js_dist_src_parser_nodes from 'node_modules/youtubei.js/dist/src/parser/nodes';
 
-type TrackSource = 'youtube' | 'youtube-music' | 'file';
 interface Track {
     id: string;
     title: string;
@@ -15,7 +14,7 @@ interface Track {
     localPath?: string;
     addedAt: number;
     isLoading?: boolean;
-    source?: TrackSource;
+    source?: string;
 }
 interface VideoSearchResult {
     id: string;

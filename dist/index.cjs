@@ -27556,7 +27556,6 @@ var YoutubeService = /*#__PURE__*/function () {
                 }).map(function (video) {
                   var _a;
                   var info = video.basic_info;
-                  console.log('[YouTubeService] getInfo for source:', video);
                   return {
                     title: info.title || '',
                     artist: info.author || '',
@@ -27565,7 +27564,7 @@ var YoutubeService = /*#__PURE__*/function () {
                     id: info.id,
                     videoId: info.id,
                     addedAt: Date.now(),
-                    source: 'youtube'
+                    source: 'minip-ytb'
                   };
                 }));
               case 4:
@@ -27587,7 +27586,7 @@ var YouTubeSource = /*#__PURE__*/function () {
     _classCallCheck(this, YouTubeSource);
     this.id = 'minip-ytb';
     this.name = 'YouTube Music';
-    this.version = '1.0.0';
+    this.version = '1.0.2';
   }
   return _createClass(YouTubeSource, [{
     key: "initialize",
