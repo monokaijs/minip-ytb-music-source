@@ -12,7 +12,7 @@ const input = 'src/index.ts';
 const BUNDLE_ALL_DEPS = false;
 const extensions = ['.ts', '.tsx', '.js', '.jsx', '.mjs'];
 
-const externalDeps = ['react-native', '@react-native-cookies/cookies', 'youtubei.js'];
+const externalDeps = ['react-native', '@react-native-cookies/cookies'];
 const isExternal = (id) => {
   if (id.startsWith('.') || path.isAbsolute(id)) return false;
   return externalDeps.some(dep => id === dep || id.startsWith(dep + '/'));
@@ -51,9 +51,7 @@ export default [
     plugins: [...basePlugins, minify],
     output: { file: 'dist/index.iife.min.js', format: 'iife', name: 'MyLibrary', sourcemap: false, globals: {
       'react-native': 'ReactNative',
-      '@react-native-cookies/cookies': 'CookieManager',
-      'youtubei.js': 'Innertube',
-      'youtubei.js/react-native': 'Innertube'
+      '@react-native-cookies/cookies': 'CookieManager'
     }},
   },
 ];
