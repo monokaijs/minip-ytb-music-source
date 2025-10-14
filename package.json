@@ -1,0 +1,28 @@
+{
+  "name": "minip-ytb-source",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rimraf dist && rollup -c rollup.config.mjs && rollup -c rollup.dts.mjs"
+  },
+  "dependencies": {
+    "@react-native-cookies/cookies": "^6.2.1",
+    "react-native": "^0.82.0",
+    "youtubei.js": "github:monokaijs/YouTube.js#d52a32828e1b2397dbc34bc6b7dc2a5ed5d07f6a"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.7",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@types/node": "^24.7.2",
+    "rimraf": "^6.0.1",
+    "rollup": "^4.52.4",
+    "rollup-plugin-dts": "^6.2.3",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "tslib": "^2.8.1",
+    "typescript": "^5.9.3"
+  },
+  "private": true
+}
