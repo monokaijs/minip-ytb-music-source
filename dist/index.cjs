@@ -20619,14 +20619,15 @@ class YoutubeService {
                 player_id: "0004de42",
                 ...(type !== eD.ANDROID && { cookie: cookieString }),
                 fetch: (url, init) => {
+                    var _a, _b, _c, _d, _e, _f, _g;
                     // @ts-ignore
-                    if (typeof init?.headers?.set === 'function') {
-                        init?.headers?.set('origin', 'https://www.youtube.com');
-                        init?.headers?.set('referer', 'https://www.youtube.com');
-                        init?.headers?.set('x-origin', 'https://www.youtube.com');
-                        init?.headers?.set('sec-fetch-dest', 'empty');
-                        init?.headers?.set('sec-fetch-mode', 'same-origin');
-                        init?.headers?.set('sec-fetch-site', 'same-origin');
+                    if (typeof ((_a = init === null || init === void 0 ? void 0 : init.headers) === null || _a === void 0 ? void 0 : _a.set) === 'function') {
+                        (_b = init === null || init === void 0 ? void 0 : init.headers) === null || _b === void 0 ? void 0 : _b.set('origin', 'https://www.youtube.com');
+                        (_c = init === null || init === void 0 ? void 0 : init.headers) === null || _c === void 0 ? void 0 : _c.set('referer', 'https://www.youtube.com');
+                        (_d = init === null || init === void 0 ? void 0 : init.headers) === null || _d === void 0 ? void 0 : _d.set('x-origin', 'https://www.youtube.com');
+                        (_e = init === null || init === void 0 ? void 0 : init.headers) === null || _e === void 0 ? void 0 : _e.set('sec-fetch-dest', 'empty');
+                        (_f = init === null || init === void 0 ? void 0 : init.headers) === null || _f === void 0 ? void 0 : _f.set('sec-fetch-mode', 'same-origin');
+                        (_g = init === null || init === void 0 ? void 0 : init.headers) === null || _g === void 0 ? void 0 : _g.set('sec-fetch-site', 'same-origin');
                     }
                     return fetch(url, init);
                 },
@@ -20642,8 +20643,9 @@ class YoutubeService {
         this.clients.clear();
     }
     async searchVideos(query, pageToken, type = 'web') {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u;
         let search;
-        if (pageToken && this.lastSearchQuery.get(type) === query && this.lastSearch.get(type)?.has_continuation) {
+        if (pageToken && this.lastSearchQuery.get(type) === query && ((_a = this.lastSearch.get(type)) === null || _a === void 0 ? void 0 : _a.has_continuation)) {
             search = await this.lastSearch.get(type).getContinuation();
         }
         else {
@@ -20671,11 +20673,11 @@ class YoutubeService {
                     seenIds.add(videoId);
                     results.push({
                         id: videoId,
-                        title: video.title?.text || video.title || '',
-                        artist: video.author?.name || video.artists?.[0]?.name || video.author || '',
-                        thumbnail: video.thumbnails?.[0]?.url || video.thumbnail?.contents?.[0]?.url || '',
-                        duration: video.duration?.seconds || video.duration || 0,
-                        viewCount: video.view_count?.text || '',
+                        title: ((_b = video.title) === null || _b === void 0 ? void 0 : _b.text) || video.title || '',
+                        artist: ((_c = video.author) === null || _c === void 0 ? void 0 : _c.name) || ((_e = (_d = video.artists) === null || _d === void 0 ? void 0 : _d[0]) === null || _e === void 0 ? void 0 : _e.name) || video.author || '',
+                        thumbnail: ((_g = (_f = video.thumbnails) === null || _f === void 0 ? void 0 : _f[0]) === null || _g === void 0 ? void 0 : _g.url) || ((_k = (_j = (_h = video.thumbnail) === null || _h === void 0 ? void 0 : _h.contents) === null || _j === void 0 ? void 0 : _j[0]) === null || _k === void 0 ? void 0 : _k.url) || '',
+                        duration: ((_l = video.duration) === null || _l === void 0 ? void 0 : _l.seconds) || video.duration || 0,
+                        viewCount: ((_m = video.view_count) === null || _m === void 0 ? void 0 : _m.text) || '',
                     });
                 }
             }
@@ -20690,10 +20692,10 @@ class YoutubeService {
                             results.push({
                                 id: videoId,
                                 title: video.title || '',
-                                artist: video.artists?.[0]?.name || 'Unknown',
-                                thumbnail: video.thumbnail?.contents?.[0]?.url || '',
-                                duration: video.duration?.seconds || 0,
-                                viewCount: video.view_count?.text || '',
+                                artist: ((_p = (_o = video.artists) === null || _o === void 0 ? void 0 : _o[0]) === null || _p === void 0 ? void 0 : _p.name) || 'Unknown',
+                                thumbnail: ((_s = (_r = (_q = video.thumbnail) === null || _q === void 0 ? void 0 : _q.contents) === null || _r === void 0 ? void 0 : _r[0]) === null || _s === void 0 ? void 0 : _s.url) || '',
+                                duration: ((_t = video.duration) === null || _t === void 0 ? void 0 : _t.seconds) || 0,
+                                viewCount: ((_u = video.view_count) === null || _u === void 0 ? void 0 : _u.text) || '',
                             });
                         }
                     }
@@ -20737,10 +20739,11 @@ class YoutubeService {
         }
     }
     async getYouTubeSuggestions(videoId, type = 'web', size = 10) {
+        var _a;
         try {
             const client = await this.getClient(type === 'music' ? eD.MUSIC : eD.WEB);
             const info = await client.getInfo(videoId);
-            const videoIds = info.watch_next_feed?.map((x) => x.as(LockupView).content_id) || [];
+            const videoIds = ((_a = info.watch_next_feed) === null || _a === void 0 ? void 0 : _a.map((x) => x.as(LockupView).content_id)) || [];
             const videos = await Promise.all(videoIds.map(async (id) => {
                 try {
                     return await client.getBasicInfo(id);
@@ -20751,12 +20754,13 @@ class YoutubeService {
             }));
             console.log('videos', videos);
             return (videos).filter(video => !!video).slice(0, size).filter(video => !!video.basic_info && !!video.basic_info.id).map(video => {
+                var _a;
                 const info = video.basic_info;
                 console.log('[YouTubeService] getInfo for source:', video);
                 return {
                     title: info.title || '',
                     artist: info.author || '',
-                    artwork: info.thumbnail?.[0].url || '',
+                    artwork: ((_a = info.thumbnail) === null || _a === void 0 ? void 0 : _a[0].url) || '',
                     duration: info.duration || 0,
                     id: info.id,
                     videoId: info.id,
