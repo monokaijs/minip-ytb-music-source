@@ -2,7 +2,7 @@ import {MusicSource} from "./types/source";
 import {youtubeService} from "./youtube.service";
 
 class YouTubeSource implements MusicSource {
-  id: string = 'minip-ytb';
+  id: string = 'minip-ytb-music';
   name: string = 'YouTube Music';
   version: string = '1.0.2';
 
@@ -10,16 +10,16 @@ class YouTubeSource implements MusicSource {
     await youtubeService.start();
   }
 
-  async search(query: string, pageToken: string | undefined, type: 'web' | 'music' = 'web') {
-    return youtubeService.searchVideos(query, pageToken, type);
+  async search(query: string, pageToken: string | undefined) {
+    return youtubeService.searchMusic(query, pageToken);
   }
 
   async getPlayableUrl(trackId: string) {
     return youtubeService.getPlayableUrl(trackId);
   }
 
-  async getSuggestions(trackId: string, type: 'web' | 'music' = 'web', size = 10) {
-    return youtubeService.getYouTubeSuggestions(trackId, type, size);
+  async getSuggestions(trackId: string, size = 10) {
+    return youtubeService.getYouTubeSuggestions(trackId, size);
   }
 
   async getPlaylists() {

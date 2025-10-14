@@ -1,5 +1,5 @@
 {
-  "name": "minip-ytb-source",
+  "name": "minip-ytb-music-source",
   "version": "1.0.1",
   "description": "",
   "main": "dist/index.cjs",

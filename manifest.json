@@ -1,10 +1,10 @@
 {
-  "id": "minip-ytb",
+  "id": "minip-ytb-music",
   "name": "YouTube",
   "version": "1.0.2",
-  "description": "Stream music from YouTube with high-quality audio",
+  "description": "Stream music from YouTube Music with high-quality audio",
   "author": "MiniP",
-  "bundleUrl": "https://raw.githubusercontent.com/monokaijs/minip-ytb-source/refs/heads/main/dist/index.cjs",
+  "bundleUrl": "https://raw.githubusercontent.com/monokaijs/minip-ytb-music-source/refs/heads/main/dist/index.cjs",
   "capabilities": ["search", "stream", "playlists", "suggestions", "top-tracks"],
   "icon": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png",
   "homepage": "https://www.youtube.com",
