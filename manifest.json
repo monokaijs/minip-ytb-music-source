@@ -1,13 +1,13 @@
 {
   "id": "youtube",
-  "name": "YouTube Music",
+  "name": "YouTube",
   "version": "1.0.0",
   "description": "Stream music from YouTube with high-quality audio",
   "author": "MiniP",
-  "bundleUrl": "https://raw.githubusercontent.com/YOUR_USERNAME/minip-sources/main/youtube/bundle.js",
+  "bundleUrl": "https://raw.githubusercontent.com/monokaijs/minip-ytb-source/refs/heads/main/dist/index.cjs",
   "capabilities": ["search", "stream", "playlists", "suggestions", "top-tracks"],
-  "icon": "https://www.youtube.com/s/desktop/logo.png",
-  "homepage": "https://music.youtube.com",
+  "icon": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png",
+  "homepage": "https://www.youtube.com",
   "minAppVersion": "1.0.0"
 }
 
