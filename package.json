@@ -1,8 +1,10 @@
 {
   "name": "minip-ytb-source",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "rimraf dist && rollup -c rollup.config.mjs && rollup -c rollup.dts.mjs"
   },

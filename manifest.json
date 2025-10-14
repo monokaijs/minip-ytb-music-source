@@ -1,7 +1,7 @@
 {
-  "id": "youtube",
+  "id": "minip-ytb",
   "name": "YouTube",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Stream music from YouTube with high-quality audio",
   "author": "MiniP",
   "bundleUrl": "https://raw.githubusercontent.com/monokaijs/minip-ytb-source/refs/heads/main/dist/index.cjs",
