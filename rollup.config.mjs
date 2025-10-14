@@ -7,6 +7,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json';
 import terser from '@rollup/plugin-terser';
+import babel from '@rollup/plugin-babel';
 
 const input = 'src/index.ts';
 const BUNDLE_ALL_DEPS = false;
@@ -27,6 +28,20 @@ const basePlugins = [
     useTsconfigDeclarationDir: false,
     clean: true,
     tslib: require.resolve('tslib'),
+  }),
+  babel({
+    babelHelpers: 'bundled',
+    extensions,
+    include: ['src/**', 'node_modules/**'],
+    presets: [
+      ['@babel/preset-env', {
+        targets: {
+          ios: '12',
+          android: '21'
+        },
+        modules: false
+      }]
+    ]
   }),
 ];
 

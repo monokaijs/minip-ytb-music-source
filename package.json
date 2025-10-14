@@ -12,6 +12,9 @@
     "youtubei.js": "github:monokaijs/YouTube.js#d52a32828e1b2397dbc34bc6b7dc2a5ed5d07f6a"
   },
   "devDependencies": {
+    "@babel/core": "^7.28.4",
+    "@babel/preset-env": "^7.28.3",
+    "@rollup/plugin-babel": "^6.1.0",
     "@rollup/plugin-commonjs": "^28.0.7",
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^16.0.3",
